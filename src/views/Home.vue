@@ -39,6 +39,7 @@ export default {
         format: "leter"
       };
       let doc = new jsPDF(docConfig);
+      
       //scale function
       function sc(val) {
         // (72px/96px)
@@ -80,6 +81,10 @@ export default {
       const sfs = sc(layout.fontSize); // scaled default font size
       const tc = { baseline: "top" }; // text config cont
       const o = this.order;
+
+      doc.setProperties({title: `DascoLaser.com Order ${o.order_no}`});
+      console.log(doc.getDocumentProperties())
+      doc.viewerPreferences({'DisplayDocTitle': true});
 
       doc.setFont("times");
 
