@@ -83,7 +83,6 @@ export default {
       const o = this.order;
 
       doc.setProperties({title: `DascoLaser.com Order ${o.order_no}`});
-      console.log(doc.getDocumentProperties())
       doc.viewerPreferences({'DisplayDocTitle': true});
 
       doc.setFont("times");
